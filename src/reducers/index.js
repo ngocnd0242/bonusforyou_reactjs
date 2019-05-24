@@ -1,11 +1,9 @@
-const reducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'GET_NEWS':
-      return { ...state, loading: true };
-    case 'NEWS_RECEIVED':
-      return { ...state, news: action.json[0], loading: false }
-    default:
-      return state;
-  }
-};
-export default reducer;
+// reducer/index.js
+import { combineReducers } from 'redux'
+import Signin from './Signin'
+
+const rootReducer = combineReducers({
+  Signin
+})
+
+export default rootReducer
